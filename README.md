@@ -2,19 +2,37 @@
 MoodMuse" – An AI-Powered Emotion-to-Art Generator
 
 
-Project Overview
+# 🎵 MoodMuse: Emotion-Based Music Recommender
 
-MoodMuse is an AI-powered tool that categorizes human moods from photographs using recognition of images and natural language processing. This research, which is housed on Hugging Face Spaces and was constructed using OpenAI's CLIP (Contrasting Language–Image Initial training) model, shows how multimodal artificial intelligence can decipher visual inputs (pictures) and link them to abstract human emotions. By analyzing facial expressions, settings, and tones to deduce emotions, MoodMuse seeks to investigate how AI may facilitate artistic, therapeutic, or recreational endeavours.
+MoodMuse is a fun, AI-powered app that detects your facial emotion and recommends music to match your mood. Just upload a photo and get a playlist that resonates with how you're feeling!
 
-Tools and Technologies 
+-------------------------------------------------------------------------------------------------------------------------
 
-Hugging Face's Transformers library provided access to the openai/clip-vit-base-patch32 basic model, which forms the basis of this application. CLIP is a great option for image-to-text matching applications like mood categorisation since it can acquire visual concepts under natural language supervision. CLIPProcessor is used to process the incoming image, encoding it along with a list of potential mood labels. To determine which mood is most comparable, the generated image and text embeddings are compared.
-A simple and interactive web interface was created using Gradio, enabling users to upload photos and get mood forecasts in real time. The Hugging Face authentication token (HUGGINGFACEHUB_API_TOKEN), which is controlled by environment variables for security, provides secure access to the model when the app goes live on Hugging Face Spaces.
+## ✅ What the Project Does
 
-How It Works
+- Detects emotion from a user's face using a pre-trained vision model.
+- Maps the detected emotion (e.g., happy, sad, angry) to a curated list of songs.
+- Recommends mood-matching music instantly via an interactive web interface.
 
-The Gradio interface is used by users to upload images. A predetermined set of emotions, including "happy," "sad," "anxious," and "hopeful," is then associated with the image. CLIP contrasts each mood's textual representation with its graphic counterpart. After calculating similarity scores, it provides a confidence percentage and the emotional label with the greatest score.
-How to Run It
-Install dependencies using pip install -r requirements.txt and set the environment variable HUGGINGFACEHUB_API_TOKEN with your own Hugging Face token to launch the project locally. Next, use Python moodmuse.py to launch the application. Set your token under the Secrets page under Advanced Settings and upload your code and materials for Hugging Face Spaces deployment.
+--------------------------------------------------------------------------------------------------------------------------
+
+## 🛠 Tools, Models, and APIs Used
+
+| Tool / Library      | Purpose                                           |
+|---------------------|---------------------------------------------------|
+| `gradio`            | User interface and image upload frontend          |
+| `transformers`      | Access to Hugging Face models                     |
+| `CLIP (openai/clip-vit-base-patch32)` | Used to embed images and classify emotions |
+| `torch`, `PIL`      | Image preprocessing and tensor handling           |
+| `Python 3.8+`       | Backend development                               |
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## 🚀 How to Run It Locally
+
+1. **Clone this repo**:
+   ```bash
+   git clone https://huggingface.co/spaces/jyotipriya/moodmuse
+   cd moodmuse
 
 
